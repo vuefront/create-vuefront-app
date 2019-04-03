@@ -1,0 +1,35 @@
+{
+    "name": "create-vuefront-app",
+    "version": "0.1.0",
+    "description": "Create a VueFront App in seconds.",
+    "bin": "cli.js",
+    "files": [
+        "cli.js",
+        "saofile.js",
+        "template/"
+    ],
+    "scripts": {
+        "test": "ava --verbose"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://dmitriyzhuk@github.com/vuefront/create-vuefront-app.git"
+    },
+    "dependencies": {
+        "cross-spawn": "^6.0.5",
+        "glob": "^7.1.3",
+        "lodash": "^4.17.11",
+        "sao": "^1.6.1",
+        "superb": "^2.0.0",
+        "validate-npm-package-name": "^3.0.0"
+    },
+    "keywords": [
+        "vuefront"
+    ],
+    "author": "Dreamvention",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vuefront/create-vuefront-app/issues"
+    },
+    "homepage": "https://github.com/vuefront/create-vuefront-app#readme"
+}
