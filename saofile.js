@@ -15,7 +15,7 @@ module.exports = {
         {
             name: 'description',
             message: 'Project description',
-            default: `My ${superb()} Nuxt.js project`
+            default: `My ${superb()} VueFront App`
         },
         {
             name: 'author',
@@ -23,11 +23,6 @@ module.exports = {
             message: 'Author name',
             default: '{gitUser.name}',
             store: true
-        },
-        {
-            name: 'url',
-            message: 'Your Site Url',
-            default: 'http://localhost:3000'
         },
         {
             name: 'api',
@@ -67,7 +62,7 @@ module.exports = {
         this.answers.mode = 'universal';
         this.answers.features = [
             'pwa', 'linter'
-        ]
+        ];
         const validation = validate(this.answers.name)
         validation.warnings && validation.warnings.forEach((warn) => {
             console.warn('Warning:', warn)
