@@ -26,8 +26,15 @@ module.exports = {
         },
         {
             name: 'api',
-            message: 'Your API URL, provided by the CMS Connect',
+            message: 'Paste the CMS Connect URL, provided by your CMS Connect App',
             default: ''
+        },
+        {
+            name: 'cors',
+            message: 'Activate Cors (Cross-Origin Resource Sharing)',
+            choices: ['true', 'false'],
+            type: 'list',
+            default: 'true'
         },
         {
             name: 'pm',
@@ -71,6 +78,11 @@ module.exports = {
             console.error('Error:', err)
         })
         validation.errors && validation.errors.length && process.exit(1)
+
+
+        if (this.answers.cors == 'true') {
+            this.answers.api = this.answers.api + '&cors=true'
+        }
 
         const actions = [{
             type: 'add',
