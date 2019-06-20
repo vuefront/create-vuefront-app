@@ -81,7 +81,7 @@ module.exports = {
 
 
         if (this.answers.cors == 'true') {
-            this.answers.api = this.answers.api + '&cors=true'
+            this.answers.api = this.answers.api + (this.answers.api.split('?')[1] ? '&' : '?') + 'cors=true'
         }
 
         const actions = [{
