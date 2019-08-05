@@ -3,7 +3,9 @@ const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 
 export default {
     mode: 'universal',
-    env: {},
+    env: {
+        FEATURED_PRODUCT: process.env.FEATURED_PRODUCT
+    },
     generate: {
         concurrency: 20,
         subFolders: false
@@ -15,6 +17,11 @@ export default {
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'description', name: 'description', content: 'VueFront' }
         ],
+        link: [{
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon.ico'
+        }],
         script: []
     },
     loading: { color: '#3B8070' },

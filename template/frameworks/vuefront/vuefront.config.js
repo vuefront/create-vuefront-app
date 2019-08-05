@@ -1,93 +1,103 @@
-if (!process.env.FEATURED_PRODUCT) {
-    process.env.FEATURED_PRODUCT = [];
-}
-
 export default {
-    theme: 'vuefront',
-    menu: ['store', 'blog'],
+    logo: require('~/assets/img/logo_header.svg'),
+    footerLogo: require('~/assets/img/logo_footer.svg'),
     layouts: {
         '*': {
-            'footerLeft': [
-                'Pages'
+            headerMenu: [
+                [
+                    'Menu',
+                    {
+                        items: ['store', 'blog']
+                    }
+                ]
             ],
-            'footerCenter': [
-                'AccountLinks'
-            ],
-            'footerRight': [
-                ['ExtraLinks', {
-                    links: [{
-                            to: '/store/special',
-                            text: 'Special'
-                        },
-                        {
-                            to: '/store/compare',
-                            text: 'Compare'
-                        },
-                        {
-                            to: '/contact',
-                            text: 'Contact Us'
-                        }
-                    ]
-                }]
+            footerLeft: ['Pages'],
+            footerCenter: ['AccountLinks'],
+            footerRight: [
+                [
+                    'ExtraLinks',
+                    {
+                        links: [{
+                                to: '/store/special',
+                                text: 'Special'
+                            },
+                            {
+                                to: '/store/compare',
+                                text: 'Compare'
+                            },
+                            {
+                                to: '/contact',
+                                text: 'Contact Us'
+                            }
+                        ]
+                    }
+                ]
             ]
         },
         '/': {
             contentTop: [
-                ['Slideshow', {
-                    items: [
-                        'https://opencart.vuefront.com/image/cache/catalog/demo/banners/MacBookAir-1140x380.jpg',
-                        'https://opencart.vuefront.com/image/cache/catalog/demo/banners/iPhone6-1140x380.jpg'
-                    ]
-                }],
-                ['FeaturedProduct', {
-                    ids: JSON.parse(process.env.FEATURED_PRODUCT)
-                }],
+                [
+                    'Slideshow',
+                    {
+                        items: [
+                            'https://opencart.vuefront.com/image/cache/catalog/demo/banners/MacBookAir-1140x380.jpg',
+                            'https://opencart.vuefront.com/image/cache/catalog/demo/banners/iPhone6-1140x380.jpg'
+                        ]
+                    }
+                ],
+                [
+                    'FeaturedProduct',
+                    {
+                        ids: JSON.parse(process.env.FEATURED_PRODUCT)
+                    }
+                ],
                 'LatestProduct',
                 'SpecialProduct',
-                'LatestPost',
+                'LatestPost'
             ]
         },
         '/search/*': {
-            contentBottom: [
-                'SearchProduct',
-                'SearchPost'
-            ]
+            contentBottom: ['SearchProduct', 'SearchPost']
         },
         '/store/category*': {
             columnLeft: [
-                'StoreCategory', ['LatestProduct', {
-                    column: true
-                }]
+                'StoreCategory', [
+                    'LatestProduct',
+                    {
+                        column: true
+                    }
+                ]
             ]
         },
         '/blog/category*': {
             columnRight: [
-                'BlogCategory', ['LatestPost', {
-                    column: true
-                }]
+                'Search',
+                'BlogCategory', [
+                    'LatestPost',
+                    {
+                        column: true
+                    }
+                ]
             ]
         },
         '/store/product/*': {
-            contentBottom: [
-                'RelatedProduct'
-            ]
+            contentBottom: ['RelatedProduct']
         },
         '/blog/post*': {
             columnRight: [
-                ['LatestPost', {
-                    column: true
-                }]
+                [
+                    'LatestPost',
+                    {
+                        column: true
+                    }
+                ]
             ]
         },
         '/account*': {
-            columnRight: [
-                'Account'
-            ]
+            columnRight: ['Account']
         },
         '/store/checkout': {
-            contentTop: [
-                'Checkout'
-            ]
+            contentTop: ['Checkout']
         }
     }
 }

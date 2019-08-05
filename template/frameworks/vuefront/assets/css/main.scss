@@ -1,0 +1,13 @@
+/**
+ * VueFront Main SCSS file.
+ * Add it to your vuefront.config.js file.
+
+    css: [
+        '@/assets/css/main.scss'
+    ],
+
+ * Other SCSS files should be included vie this main file.
+
+    @import './templates/common/layout';
+
+ */

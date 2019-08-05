@@ -16,7 +16,7 @@
         "@nuxtjs/pwa": "^3.0.0-beta.14",
         "cookie-universal-nuxt": "^2.0.14",
         "nuxt": "^2.7.1",
-        "vuefront-nuxt": "^0.1.13"
+        "vuefront-nuxt": "^0.2.0"
     },
     "devDependencies": {
         "babel-plugin-lodash": "^3.3.4",
