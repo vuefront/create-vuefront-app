@@ -1,5 +1,3 @@
 <template>
-  <vf-o-layout>
-    <nuxt />
-  </vf-o-layout>
+  <nuxt />
 </template>
