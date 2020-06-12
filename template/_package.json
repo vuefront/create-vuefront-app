@@ -12,18 +12,35 @@
         "analyze": "nuxt build --analyze"
     },
     "dependencies": {
-        "@babel/runtime-corejs2": "^7.8.4",
-        "@nuxtjs/dotenv": "^1.3.0",
-        "@nuxtjs/pwa": "^3.0.0-beta.14",
-        "cookie-universal-nuxt": "^2.0.14",
-        "nuxt": "^2.7.1",
-        "vuefront-nuxt": "^0.2.0"
+        "@nuxtjs/dotenv": "^1.4.1",
+        "@nuxtjs/pwa": "^3.0.0-beta.20",
+        <% if (theme === 'WordPress') { %>
+        "@vuefront/theme-wordpress": "^0.1.1",
+        <% } %>
+        <% if (theme === 'OpenCart') { %>
+        "@vuefront/theme-opencart": "^0.1.1",
+        <% } %>
+        <% if (theme === 'Magento') { %>
+        "@vuefront/theme-magento": "^0.1.1",
+        <% } %>
+        <% if (theme === 'PrestaShop') { %>
+        "@vuefront/theme-prestashop": "^0.1.1",
+        <% } %>
+        "cookie-universal-nuxt": "^2.1.2",
+        "nuxt": "^2.11.0",
+        <% if (version === 'stable') { %>
+        "vuefront-nuxt": "^0.3.10"
+        <% } %>
+        <% if (version === 'next') { %>
+        "vuefront-nuxt": "vuefront/vuefront-nuxt"
+        <% } %>
     },
     "devDependencies": {
+        "@babel/runtime-corejs2": "^7.8.4",
         "babel-plugin-lodash": "^3.3.4",
         "core-js": "2",
         "lodash-webpack-plugin": "^0.11.5",
-        "node-sass": "^4.12.0",
-        "sass-loader": "^7.1.0"
+        "node-sass": "^4.13.1",
+        "sass-loader": "^8.0.2"
     }
 }

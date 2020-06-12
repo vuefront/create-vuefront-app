@@ -37,12 +37,27 @@ module.exports = {
             default: 'true'
         },
         {
+            name: 'theme',
+            message: 'Select VueFront theme',
+            choices: ['None', 'OpenCart'],
+            type: 'list',
+            default: 'None'
+        },
+        {
             name: 'pm',
             message: 'Choose a package manager',
             choices: ['yarn', 'npm'],
             type: 'list',
             default: 'yarn'
+        },
+        {
+            name: 'version',
+            message: 'Choose VueFront App version',
+            choices: ['stable', 'next'],
+            type: 'list',
+            default: 'stable'
         }
+
     ],
     templateData() {
         const edge = process.argv.includes('--edge')
@@ -114,7 +129,8 @@ module.exports = {
                 gitignore: '.gitignore',
                 '_package.json': 'package.json',
                 '_.eslintrc.js': '.eslintrc.js',
-                '_.env': '.env'
+                '_.env': '.env',
+                '_vuefront.config.js': 'vuefront.config.js'
             }
         })
 

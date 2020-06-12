@@ -35,6 +35,7 @@ export default {
         babel: {
             plugins: ['lodash']
         },
+        transpile: [/vuefront/],
         extractCSS: true,
         plugins: [new LodashModuleReplacementPlugin({
             shorthands: true

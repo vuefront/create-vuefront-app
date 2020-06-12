@@ -1,6 +1,28 @@
 export default {
-    logo: require('~/assets/img/logo_header.svg'),
-    footerLogo: require('~/assets/img/logo_footer.svg'),
+    <% if (theme === 'None') { %>
+    // To intall a VueFront WordPress Default theme, run `yarn add @vuefront/theme-wordpress` and uncomment:
+    //theme: '@vuefront/theme-wordpress',
+    <% } %>
+    <% if (theme === 'WordPress') { %>
+    theme: '@vuefront/theme-wordpress',
+    <% } %>
+    <% if (theme === 'OpenCart') { %>
+    theme: '@vuefront/theme-opencart',
+    <% } %>
+    <% if (theme === 'Magento') { %>
+    theme: '@vuefront/theme-magento',
+    <% } %>
+    <% if (theme === 'PrestaShop') { %>
+    theme: '@vuefront/theme-prestashop',
+    <% } %>
+    image: {
+        logo: {
+            path: '~/assets/img/logo_header.svg'
+        },
+        footerLogo: {
+            path: '~/assets/img/logo_footer.svg'
+        },
+    },
     layouts: {
         '*': {
             headerMenu: [

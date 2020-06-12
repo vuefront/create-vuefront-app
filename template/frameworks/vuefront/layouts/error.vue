@@ -1,5 +1,3 @@
 <template>
-  <vf-o-layout>
-    <vf-t-error />
-  </vf-o-layout>
+  <vf-t-common-error />
 </template>
