@@ -1,6 +1,3 @@
-const { join } = require('path')
-const superb = require('superb')
-const glob = require('glob')
 const spawn = require('cross-spawn')
 const validate = require('validate-npm-package-name')
 
@@ -15,7 +12,7 @@ module.exports = {
         {
             name: 'description',
             message: 'Project description',
-            default: `My ${superb()} VueFront App`
+            default: `My VueFront App`
         },
         {
             name: 'author',
