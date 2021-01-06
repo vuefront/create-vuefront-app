@@ -1,6 +1,6 @@
 {
     "name": "create-vuefront-app",
-    "version": "0.2.4",
+    "version": "0.3.4",
     "description": "Create a VueFront App in seconds.",
     "bin": "cli.js",
     "files": [
@@ -30,7 +30,8 @@
         "vue storefront",
         "vue-store",
         "vue-storefront",
-        "dreamvention"
+        "dreamvention",
+        "tailwind"
     ],
     "author": "VueFront",
     "license": "MIT",

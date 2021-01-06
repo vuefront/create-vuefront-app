@@ -1,0 +1,30 @@
+{
+  "name": "<%= name %>",
+  "description": "<%= description %>",
+  "version": "0.1.0",
+  "author": "<%= author %>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev -o",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "analyze": "nuxt build --analyze"
+  },
+  "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",<% if (theme !== 'None') { %>
+    "@vuefront/theme-<%= theme %>": "^0.1.1",<% } %>
+    "cookie-universal-nuxt": "^2.1.2",
+    "nuxt": "^2.11.0",
+    "vuefront-nuxt": "^0.3.10"
+  },
+  "devDependencies": {
+    "@babel/runtime-corejs2": "^7.8.4",
+    "babel-plugin-lodash": "^3.3.4",
+    "core-js": "2",
+    "lodash-webpack-plugin": "^0.11.5",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2"
+  }
+}

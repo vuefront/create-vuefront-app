@@ -39,7 +39,7 @@ module.exports = {
         {
             name: 'theme',
             message: 'Select VueFront theme',
-            choices: ['None', 'OpenCart'],
+            choices: ['None', 'opencart'],
             type: 'list',
             default: 'None'
         },
@@ -99,40 +99,63 @@ module.exports = {
             this.answers.api = this.answers.api + (this.answers.api.split('?')[1] ? '&' : '?') + 'cors=true'
         }
 
-        const actions = [{
-            type: 'add',
-            files: '**',
-            templateDir: 'template/nuxt',
-            filters: {
-                'static/icon.png': 'features.includes("pwa")'
-            }
-        }]
+        const actions = []
+        
+        // [{
+        //     type: 'add',
+        //     files: '**',
+        //     templateDir: 'template/nuxt',
+        //     filters: {
+        //         'static/icon.png': 'features.includes("pwa")'
+        //     }
+        // }]
 
-        actions.push({
-            type: 'add',
-            files: '**',
-            templateDir: `template/frameworks/vuefront`
-        })
+        // actions.push({
+        //     type: 'add',
+        //     files: '*',
+        //     filters: {
+        //         '_.eslintrc.js': 'features.includes("linter")',
+        //         '.prettierrc': 'features.includes("prettier")'
+        //     }
+        // })
 
-        actions.push({
-            type: 'add',
-            files: '*',
-            filters: {
-                '_.eslintrc.js': 'features.includes("linter")',
-                '.prettierrc': 'features.includes("prettier")'
-            }
-        })
 
-        actions.push({
-            type: 'move',
-            patterns: {
-                gitignore: '.gitignore',
-                '_package.json': 'package.json',
-                '_.eslintrc.js': '.eslintrc.js',
-                '_.env': '.env',
-                '_vuefront.config.js': 'vuefront.config.js'
-            }
-        })
+        if(this.answers.version == 'stable'){
+            actions.push({
+                type: 'add',
+                files: '**',
+                templateDir: 'template/stable'
+            })
+
+            actions.push({
+                type: 'move',
+                patterns: {
+                    gitignore: '.gitignore',
+                    '_package.json': 'package.json',
+                    '_.eslintrc.js': '.eslintrc.js',
+                    '_.env': '.env',
+                    '_vuefront.config.js': 'vuefront.config.js'
+                }
+            })
+        }
+
+        if(this.answers.version == 'next'){
+            actions.push({
+                type: 'add',
+                files: '**',
+                templateDir: 'template/next'
+            }) 
+
+            actions.push({
+                type: 'move',
+                patterns: {
+                    gitignore: '.gitignore',
+                    '_package.json': 'package.json',
+                    '_.env': '.env',
+                    '_vuefront.config.js': 'vuefront.config.js'
+                }
+            })
+        }
 
         return actions
     },
