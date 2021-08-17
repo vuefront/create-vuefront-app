@@ -48,6 +48,8 @@ export default {<%
         [
           'Slideshow',
           {
+            sliderNav: true,
+            sliderArrows: true,
             items: [
               'https://img.dreamvention.com/vuefront/banners/Banner_demo_1.jpg',
               'https://img.dreamvention.com/vuefront/banners/Banner_demo_2.jpg'

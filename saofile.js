@@ -1,7 +1,4 @@
-const spawn = require('cross-spawn')
 const validate = require('validate-npm-package-name')
-
-const rootDir = __dirname
 
 module.exports = {
     prompts: [{
@@ -36,7 +33,7 @@ module.exports = {
         {
             name: 'theme',
             message: 'Select VueFront theme',
-            choices: ['None', 'opencart'],
+            choices: ['None'/*, 'opencart'*/],
             type: 'list',
             default: 'None'
         },
@@ -58,30 +55,13 @@ module.exports = {
     ],
     templateData() {
         const edge = process.argv.includes('--edge')
-        const pwa = true
-        const linter = false
-        const prettier = false
-        const axios = false
-        const esm = true
+
 
         return {
             edge,
-            pwa: pwa ? 'yes' : 'no',
-            eslint: linter ? 'yes' : 'no',
-            prettier: prettier ? 'yes' : 'no',
-            axios: axios ? 'yes' : 'no',
-            esm
         }
     },
     actions() {
-
-        this.answers.ui = 'none';
-        this.answers.server = 'none';
-        this.answers.test = 'none';
-        this.answers.mode = 'universal';
-        this.answers.features = [
-            'pwa', 'linter'
-        ];
         const validation = validate(this.answers.name)
         validation.warnings && validation.warnings.forEach((warn) => {
             console.warn('Warning:', warn)
@@ -97,25 +77,6 @@ module.exports = {
         }
 
         const actions = []
-        
-        // [{
-        //     type: 'add',
-        //     files: '**',
-        //     templateDir: 'template/nuxt',
-        //     filters: {
-        //         'static/icon.png': 'features.includes("pwa")'
-        //     }
-        // }]
-
-        // actions.push({
-        //     type: 'add',
-        //     files: '*',
-        //     filters: {
-        //         '_.eslintrc.js': 'features.includes("linter")',
-        //         '.prettierrc': 'features.includes("prettier")'
-        //     }
-        // })
-
 
         if(this.answers.version == 'stable'){
             actions.push({
@@ -167,18 +128,6 @@ module.exports = {
             if (isNewFolder) {
                 console.log(`\t${this.chalk.cyan('cd')} ${this.outFolder}`)
             }
-        }
-
-
-        if (this.answers.features.includes('linter')) {
-            const options = ['run', 'lint', '--', '--fix']
-            if (this.answers.pm === 'yarn') {
-                options.splice(2, 1)
-            }
-            spawn.sync(this.answers.pm, options, {
-                cwd: this.outDir,
-                stdio: 'inherit'
-            })
         }
 
         console.log()
