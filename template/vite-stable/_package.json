@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.172",
-    "@vuefront/checkout-app": "^0.1.23",
+    "@vuefront/checkout-app": "^0.2.0",
     "autoprefixer": "^10.3.1",
     "dotenv": "^10.0.0",
     "graphql": "^15.5.1",
@@ -23,7 +23,7 @@
     "vite-plugin-eslint": "^1.3.0",
     "vite-plugin-voie": "^0.7.3",
     "vite-plugin-vue-vuefront": "^0.0.4",
-    "vuefront": "^0.3.78",
+    "vuefront": "^0.4.0",
     "vite-plugin-vue2": "^1.7.3",
     "vite2-graphql-plugin": "^0.0.4",
     "vue": "^2.6.14",
