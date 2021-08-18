@@ -38,6 +38,13 @@ module.exports = {
             default: 'None'
         },
         {
+            name: 'framework',
+            message: 'Select framework',
+            choices: ['nuxt', "vite"],
+            type: 'list',
+            default: 'nuxt'
+        },
+        {
             name: 'pm',
             message: 'Choose a package manager',
             choices: ['yarn', 'npm'],
@@ -79,11 +86,22 @@ module.exports = {
         const actions = []
 
         if(this.answers.version == 'stable'){
-            actions.push({
-                type: 'add',
-                files: '**',
-                templateDir: 'template/stable'
-            })
+            if (this.answers.framework === 'nuxt') {
+                actions.push({
+                    type: 'add',
+                    files: '**',
+                    templateDir: 'template/stable'
+                })
+            }
+
+            if (this.answers.framework === 'vite') {
+                actions.push({
+                    type: 'add',
+                    files: '**',
+                    templateDir: 'template/vite-stable'
+                })
+            }
+
 
             actions.push({
                 type: 'move',
@@ -98,21 +116,32 @@ module.exports = {
         }
 
         if(this.answers.version == 'next'){
-            actions.push({
-                type: 'add',
-                files: '**',
-                templateDir: 'template/next'
-            }) 
+            if (this.answers.framework === 'nuxt') {
+                actions.push({
+                    type: 'add',
+                    files: '**',
+                    templateDir: 'template/next'
+                }) 
+            }
+
+            if (this.answers.framework === 'vite') {
+                actions.push({
+                    type: 'add',
+                    files: '**',
+                    templateDir: 'template/vite-next'
+                }) 
+            }
 
             actions.push({
                 type: 'move',
                 patterns: {
                     gitignore: '.gitignore',
                     '_package.json': 'package.json',
+                    '_.eslintrc.js': '.eslintrc.js',
                     '_.env': '.env',
                     '_vuefront.config.js': 'vuefront.config.js'
                 }
-            })
+            })  
         }
 
         return actions
