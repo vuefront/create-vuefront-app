@@ -109,6 +109,7 @@ module.exports = {
                     gitignore: '.gitignore',
                     '_package.json': 'package.json',
                     '_.eslintrc.js': '.eslintrc.js',
+                    '_.eslintrc.json': '.eslintrc.json',
                     '_.env': '.env',
                     '_vuefront.config.js': 'vuefront.config.js'
                 }

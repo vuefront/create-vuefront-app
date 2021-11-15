@@ -1,5 +1,5 @@
 module.exports = {
-  // app: ["@vuefront/checkout-app"],
+  app: ["@vuefront/checkout-app"],
   image: {
     logo: {
       path: "~/assets/img/VUE_JS.svg",
@@ -18,21 +18,12 @@ module.exports = {
           },
         ],
       ],
-      footerLeft: ["Pages"],
-      footerCenter: ["AccountLinks"],
-      footerRight: [
+      footer1: ["Pages"],
+      footer2: [
         [
           "ExtraLinks",
           {
             links: [
-              {
-                to: "/store/special",
-                text: "Special",
-              },
-              {
-                to: "/store/compare",
-                text: "Compare",
-              },
               {
                 to: "/contact",
                 text: "Contact Us",
@@ -41,9 +32,31 @@ module.exports = {
           },
         ],
       ],
+      footer3: ["AccountLinks"],
+      footer4: [
+        [
+          "ExtraLinks",
+          {
+            links: [
+              {
+                to: "/store/manufacturer",
+                text: "Brands",
+              },
+              {
+                to: "/store/special",
+                text: "Special",
+              },
+              {
+                to: "/store/compare",
+                text: "Compare",
+              },
+            ],
+          },
+        ],
+      ],
     },
     "/": {
-      contentTop: [
+      contentFullTop: [
         [
           "Slideshow",
           {
@@ -55,10 +68,8 @@ module.exports = {
             ],
           },
         ],
-        "LatestProduct",
-        "SpecialProduct",
-        "LatestPost",
       ],
+      contentTop: ["LatestProduct", "SpecialProduct", "LatestPost"],
     },
     "/search/*": {
       contentBottom: ["SearchProduct", "SearchPost"],
@@ -76,7 +87,6 @@ module.exports = {
     },
     "/blog/category*": {
       columnRight: [
-        "Search",
         "BlogCategory",
         [
           "LatestPost",

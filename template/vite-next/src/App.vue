@@ -1,3 +1,3 @@
 <template>
-  <router-view />
+  <vf-t-common-layout />
 </template>
