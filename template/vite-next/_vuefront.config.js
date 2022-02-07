@@ -1,6 +1,6 @@
 module.exports = {
   app: ["@vuefront/checkout-app"],
-  image: {
+  images: {
     logo: {
       path: "~/assets/img/VUE_JS.svg",
     },

@@ -1,9 +1,4 @@
 {
-  "name": "<%= name %>",
-  "description": "<%= description %>",
-  "version": "0.1.0",
-  "author": "<%= author %>",
-  "private": true,
   "scripts": {
     "dev": "nuxt dev -o",
     "build": "nuxt build",
@@ -27,8 +22,7 @@
     "nuxt": "2.15.8",
     "nuxt-compress": "^5.0.0",
     "vuefront": "0.4.0",
-    "vuefront-nuxt": "0.4.0"<% if (theme !== 'None') { %>,
-    "@vuefront/theme-<%= theme %>": "^0.1.1"<% } %>
+    "vuefront-nuxt": "0.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",

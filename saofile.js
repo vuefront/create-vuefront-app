@@ -30,17 +30,17 @@ module.exports = {
             type: 'list',
             default: 'true'
         },
-        {
-            name: 'theme',
-            message: 'Select VueFront theme',
-            choices: ['None'/*, 'opencart'*/],
-            type: 'list',
-            default: 'None'
-        },
+        // {
+        //     name: 'theme',
+        //     message: 'Select VueFront theme',
+        //     choices: ['None'/*, 'opencart'*/],
+        //     type: 'list',
+        //     default: 'None'
+        // },
         {
             name: 'framework',
             message: 'Select framework',
-            choices: ['nuxt', "vite"],
+            choices: ['vite', 'nuxt'],
             type: 'list',
             default: 'nuxt'
         },

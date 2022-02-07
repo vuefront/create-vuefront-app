@@ -9,7 +9,11 @@ const _ = require("lodash");
 const toAbsolute = (p) => path.resolve(__dirname, p);
 
 const manifest = require("./dist/static/ssr-manifest.json");
-const template = fs.readFileSync(toAbsolute("dist/static/index.html"), "utf-8");
+fs.copyFileSync(
+  toAbsolute("dist/static/index.html"),
+  toAbsolute("dist/static/200.html")
+);
+const template = fs.readFileSync(toAbsolute("dist/static/200.html"), "utf-8");
 const { render } = require("./dist/server/entry-server.js");
 const sleep = (ms) =>
   new Promise((resolve) => {
